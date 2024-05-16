@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +15,7 @@ public class User {
     private Long Id;
     private String firstName;
     private String lastName;
+    private Date birthDate;
     private String email;
     private String password;
     private String driversId;
@@ -60,6 +62,14 @@ public class User {
 
     public void setDriversId(String driversId) {
         this.driversId = driversId;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     @Override
