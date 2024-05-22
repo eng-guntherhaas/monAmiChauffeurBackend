@@ -1,4 +1,4 @@
-package entities;
+package com.project.monamichauffeurbackend.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,9 +19,14 @@ public class User {
     private String email;
     private String password;
     private String driversId;
+    private String role;
 
     public Long getId() {
         return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getFirstName() {
@@ -38,6 +43,14 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getEmail() {
@@ -64,24 +77,11 @@ public class User {
         this.driversId = driversId;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public String getRole() {
+        return role;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(getId(), user.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
+    public void setRole(String role) {
+        this.role = role;
     }
 }
